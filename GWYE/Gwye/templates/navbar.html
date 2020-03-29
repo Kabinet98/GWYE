@@ -1,0 +1,123 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block title %} Home page {% endblock %}
+{% block stylesheet %}
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css_project_files/navbar.css' %}">
+        <link rel="stylesheet" href="{% static 'fontawesome-free-5.8.1-web/css/all.css' %}">
+    {% endblock%}
+{% block content %}
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark" id="nav">
+                          <a class="navbar-brand" href="#"><i class="fa fa-handshake"  id="handkshake"> </i> <strong >Gwye</strong></a>
+                          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                          </button>
+
+                          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                              <li class="nav-item active">
+                                <a class="nav-link text-white" href="#">Home <span class="sr-only">(current)</span></a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link text-white" href="#">Link</a>
+                              </li>
+                              <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Dropdown
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                  <a class="dropdown-item" href="#">Action</a>
+                                  <a class="dropdown-item" href="#">Another action</a>
+                                  <div class="dropdown-divider"></div>
+                                  <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                              </li>
+
+                            </ul>
+                              <div class="container col-sm-3" id="search">
+                                  <form action="" method="post" >
+                                      {% csrf_token %}
+                                  <div class="input-group">
+                                      <input type="search" class="form-control" placeholder="looking for something?" name="q">
+                                      <div class="input-group-append">
+                                          <button class="btn btn-secondary">
+                                              <i class="fa fa-search"></i>
+                                          </button>
+                                      </div>
+                                  </div>
+                              </form>
+                              </div>
+
+                               <button class="btn btn-secondary btn-sm"  data-toggle="modal" data-target="#loginModal" id="login">login <i class="fa fa-user-circle"></i> </button>
+                              &nbsp; <div class="dropleft" id="logoutButton">
+                                        <button class="btn btn-danger dropdown-toggle btn-sm"  data-toggle="dropdown">
+                                            <i class="fa fa-power-off"></i>
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a href="" class="dropdown-item"><i class="fa fa-cogs"></i> settings</a>
+                                            <a href="" class="dropdown-item"><i class="fa fa-user-edit"></i> profile</a>
+                                            <a href="" class="dropdown-item"><i class="fa fa-bell"></i> notification(s) <span class="badge badge-secondary">0</span></a>
+                                            <a href="" class="dropdown-item active bg-danger"><i class="fa fa-power-off"></i> logout</a>
+                                        </div>
+                                </div>
+
+
+                          </div>
+            </nav>
+
+                <div class="modal fade"  id="loginModal" >
+                    <div class="modal-dialog " style="max-width: 20rem" >
+                        <div class="modal-content">
+                            <div class="modal-header bg-secondary">
+                                <h6 style="" id="modalh6"><i class="fa fa-handshake" id="modalicone"> </i> Gwye</h6>
+                            </div>
+                            <div class="modal-body">
+                                <form action="#" method="post" id="form">
+                                    {% csrf_token %}
+                                       <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                    </div>
+                                           <label for="username"></label>
+                                        <input type="text" class="form-control" placeholder="Username or email" id="username" name="username" >
+                                </div>
+                                 <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="fa fa-lock"></i>
+                                        </span>
+                                    </div>
+                                     <label for="password"></label>
+                                        <input type="password" class="form-control" placeholder="password" id="password" autocomplete="off" name="password">
+                                </div>
+                                    <button class="btn btn-secondary" id="open"><i class="fa fa-lock-open"></i> login</button>
+
+
+
+
+                                </form>
+                            </div>
+                             <div class="modal-footer" id="modalfooter">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <a href="" id="forgotpassword">Forgot password?</a>
+                                                </div>
+                                                <div class="col">
+                                                    <a href="#" id="signup"><p>Doesnt'have an account yet? sign up</p></a>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+
+{% endblock %}
+
+
+{% block javascript %}
+     <script src="{%static 'js/jquery-3.3.1.js' %}"></script>
+     <script src="{%static 'js/bootstrap.js'%}"></script>
+     <script src="{%static 'js_project_files/navbar.js' %}"></script>
+ {% endblock%}

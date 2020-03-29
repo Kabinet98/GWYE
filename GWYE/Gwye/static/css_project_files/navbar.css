@@ -1,0 +1,48 @@
+.article{
+    color: red;
+}
+body
+{
+    background-color: rgba(204,204,204,.5);
+}
+.dropdown-item:hover{
+    color:#ffffff;
+    background-color: #4e555b;
+}
+#handkshake
+{
+    color:#0f6674;
+}
+#modalh6
+{
+    margin: 0 auto;
+}
+#modalicone
+{
+    color:#0f6674;
+}
+#modalfooter
+{
+    padding: 5px;
+}
+#forgotpassword
+{
+    font-size: 12px;font-weight: bold;text-decoration: none;color: #0f6674;
+}
+#signup
+{
+    font-size: 12px;font-weight: bold;text-decoration: none;color:#0f6674;
+}
+#nav{
+    padding:2px;
+    position:fixed;
+    z-index: 1000;
+    width: 100%;
+    top:0;
+    left:0;
+    box-shadow: 0 0 40px 0;
+}
+#search
+{
+    margin-top:8px;
+}
